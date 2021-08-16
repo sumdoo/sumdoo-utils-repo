@@ -1,0 +1,21 @@
+{
+    "name": "@sumdoo-utils/core",
+    "version": "1.1.0",
+    "description": "工具函数核心库",
+    "keywords": [
+        "utils"
+    ],
+    "author": "beck <2223969110@qq.com>",
+    "exports": {
+        ".": {
+            "import": "./index.esm.js",
+            "require": "./index.cjs.js"
+        },
+        "./*": "./*"
+    },
+    "main": "./index.cjs.js",
+    "types": "./index.d.ts",
+    "module": "./index.esm.js",
+    "homepage": "",
+    "license": "MIT"
+}

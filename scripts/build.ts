@@ -16,8 +16,8 @@ const FILES_COPY_LOCAL = [
 const rootDir = path.resolve(__dirname, '..');
 async function buildMetaFiles() {
     for(const { name } of activePackages){
-        const packageRoot = path.resolve(rootDir, `packages/${name}`);
-        const packageDist = path.resolve(packageRoot, 'dist');
+        const packageRoot = path.resolve(rootDir, `packages/${name}/src`);
+        const packageDist = path.resolve(packageRoot, '../dist');
 
         // 拷贝开源协议
         for (const file of FILES_COPY_ROOT) {

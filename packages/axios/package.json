@@ -9,18 +9,24 @@
     "author": "beck <2223969110@qq.com>",
     "exports": {
         ".": {
-            "import": "./index.esm.js",
-            "require": "./index.cjs.js"
+            "import": "./dist/index.esm.js",
+            "require": "./dist/index.cjs.js"
         },
-        "./*": "./*"
+        "./*": "./dist/*"
     },
-    "main": "./index.cjs.js",
-    "types": "./index.d.ts",
-    "module": "./index.esm.js",
+    "main": "./dist/index.cjs.js",
+    "types": "./dist/index.d.ts",
+    "module": "./dist/index.esm.js",
     "homepage": "",
     "license": "MIT",
     "dependencies": {
         "@sumdoo-utils/core": "^0.4.1"
     },
-    "gitHead": "5f7866bd9c3f0401e62fb246f802c6a00f8a45cb"
+    "gitHead": "5f7866bd9c3f0401e62fb246f802c6a00f8a45cb",
+    "devDependencies": {
+        "axios": "^0.21.1"
+    },
+    "peerDependencies": {
+        "axios": "^0.21.1"
+    }
 }

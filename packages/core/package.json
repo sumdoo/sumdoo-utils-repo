@@ -8,14 +8,14 @@
     "author": "beck <2223969110@qq.com>",
     "exports": {
         ".": {
-            "import": "./index.esm.js",
-            "require": "./index.cjs.js"
+            "import": "./dist/index.esm.js",
+            "require": "./dist/index.cjs.js"
         },
-        "./*": "./*"
+        "./*": "./dist/*"
     },
-    "main": "./index.cjs.js",
-    "types": "./index.d.ts",
-    "module": "./index.esm.js",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.esm.js",
+    "types": "./dist/index.d.ts",
     "homepage": "",
     "license": "MIT",
     "gitHead": "95c8c11847b7666953f22211c5838f731367d551"

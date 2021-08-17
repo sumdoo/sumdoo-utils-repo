@@ -42,10 +42,10 @@ export function toDate(t: any) {
 export function format(t: Date | string, fmt = 'YYYY-MM-DD') {
     const d = toDate(t) || new Date();
 
-    const year = String(d.getFullYear());
-    const month = String(d.getMonth() + 1);
-    const date = String(d.getDate());
-    const hours = String(d.getHours());
+    const year    = String(d.getFullYear());
+    const month   = String(d.getMonth() + 1);
+    const date    = String(d.getDate());
+    const hours   = String(d.getHours());
     const minutes = String(d.getMinutes());
     const seconds = String(d.getSeconds());
 

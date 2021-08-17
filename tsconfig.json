@@ -8,8 +8,6 @@
         "strict": true,
         "strictNullChecks": true,
         "strictFunctionTypes": true,
-        "declaration": false,
-        "declarationDir": "./types",
         "resolveJsonModule": true,
         "rootDir": ".",
         "baseUrl": ".",
@@ -23,7 +21,8 @@
         }
     },
     "include": [
-        "packages"
+        "packages",
+        "typings"
     ],
     "exclude": [
         "node_modules",
@@ -32,6 +31,6 @@
         "**/**/*.md",
         "**/dist",
         "packages/.test",
-        "packages/_docs"
+        "packages/_docs",
     ]
 }

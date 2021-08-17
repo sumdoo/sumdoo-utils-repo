@@ -18,6 +18,7 @@
         "@commitlint/cli": "^13.1.0",
         "@commitlint/config-conventional": "^13.1.0",
         "@commitlint/config-lerna-scopes": "^13.1.0",
+        "@types/crypto-js": "^4.0.2",
         "@types/fs-extra": "^9.0.12",
         "commitlint": "^13.1.0",
         "consola": "^2.15.3",

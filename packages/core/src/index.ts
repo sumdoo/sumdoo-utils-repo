@@ -10,5 +10,5 @@ export * from './log'
 export * from './object'
 export * from './query'
 export * from './string'
-
+export * from './uuid'
 

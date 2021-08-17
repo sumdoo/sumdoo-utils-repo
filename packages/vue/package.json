@@ -1,0 +1,30 @@
+{
+    "name": "@sumdoo-utils/vue",
+    "version": "0.0.0",
+    "description": "Vue 框架工具函数库整合",
+    "keywords": [
+        "Vue",
+        "utils"
+    ],
+    "author": "beck <2223969110@qq.com>",
+    "exports": {
+        ".": {
+            "import": "./dist/index.esm.js",
+            "require": "./dist/index.cjs.js"
+        },
+        "./*": "./dist/*"
+    },
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.esm.js",
+    "types": "./dist/index.d.ts",
+    "homepage": "",
+    "license": "MIT",
+    "devDependencies": {
+        "vue": "^3.2.3",
+        "vue-types": "^4.0.3"
+    },
+    "peerDependencies": {
+        "vue": "^3.2.3",
+        "vue-types": "^4.0.3"
+    }
+}

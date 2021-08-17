@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/web",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "WEB端工具函数库整合",
     "keywords": [
         "web",

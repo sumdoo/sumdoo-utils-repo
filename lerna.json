@@ -1,9 +1,10 @@
 {
     "version": "independent",
     "npmClient": "yarn",
+    "ignoreChanges": ["ignored-file", "*.md"],
     "command": {
         "publish": {
-            "ignoreChanges": ["ignored-file", "*.md"]
+            "registry": "http://182.254.211.145:4873"
         }
     },
     "useWorkspaces": true,

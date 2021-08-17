@@ -21,5 +21,6 @@
     "license": "MIT",
     "dependencies": {
         "@sumdoo-utils/core": "^0.3.0"
-    }
+    },
+    "gitHead": "5f7866bd9c3f0401e62fb246f802c6a00f8a45cb"
 }

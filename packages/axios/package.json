@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/axios",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "工具函数请求库",
     "keywords": [
         "axios",
@@ -20,7 +20,7 @@
     "homepage": "",
     "license": "MIT",
     "dependencies": {
-        "@sumdoo-utils/core": "^0.4.1"
+        "@sumdoo-utils/core": "^0.4.2"
     },
     "gitHead": "5f7866bd9c3f0401e62fb246f802c6a00f8a45cb",
     "devDependencies": {

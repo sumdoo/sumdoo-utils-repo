@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/vue",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Vue 框架工具函数库整合",
     "keywords": [
         "Vue",

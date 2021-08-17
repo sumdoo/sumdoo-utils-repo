@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/web",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "WEB端工具函数库整合",
     "keywords": [
         "web",
@@ -20,7 +20,7 @@
     "homepage": "",
     "license": "MIT",
     "dependencies": {
-        "@sumdoo-utils/core": "^0.4.1"
+        "@sumdoo-utils/core": "^0.4.3"
     },
     "peerDependencies": {
         "crypto-js": "^4.1.1"

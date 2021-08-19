@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/web",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "WEB端工具函数库整合",
     "keywords": [
         "web",
@@ -24,7 +24,7 @@
         "crypto-js": "^4.1.1"
     },
     "devDependencies": {
-        "@sumdoo-utils/core": "^0.4.3",
+        "@sumdoo-utils/core": "^0.4.4",
         "crypto-js": "^4.1.1"
     }
 }

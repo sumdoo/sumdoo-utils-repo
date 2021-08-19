@@ -35,7 +35,7 @@ interface RouterConstructorOption {
     home: string;
 }
 
-export default class Router {
+export class Router {
     private beforeEachFn: BeforeEachFn | null;
     private homePath: string;
 

@@ -1,9 +1,10 @@
 {
-    "name": "@sumdoo-utils/web",
-    "version": "0.1.1",
-    "description": "WEB端工具函数库整合",
+    "name": "@sumdoo-utils/uniapp-helper",
+    "version": "0.0.0",
+    "description": "uni-wxapp 小程序工具函数集合",
     "keywords": [
-        "web",
+        "wxapp",
+        "uni-app",
         "utils"
     ],
     "author": "beck <2223969110@qq.com>",
@@ -19,12 +20,12 @@
     "types": "./dist/index.d.ts",
     "homepage": "",
     "license": "MIT",
-    "peerDependencies": {
-        "@sumdoo-utils/core": "^0.4.3",
-        "crypto-js": "^4.1.1"
-    },
+    "gitHead": "95c8c11847b7666953f22211c5838f731367d551",
     "devDependencies": {
-        "@sumdoo-utils/core": "^0.4.3",
-        "crypto-js": "^4.1.1"
+        "@dcloudio/types": "^2.5.1",
+        "@sumdoo-utils/core": "^0.4.3"
+    },
+    "peerDependencies": {
+        "@sumdoo-utils/core": "^0.4.3"
     }
 }

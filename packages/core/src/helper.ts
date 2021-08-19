@@ -32,3 +32,21 @@ export function sleep(time: number, key: string) {
 export function getPercentage(loaded: number, total: number) {
     return Math.round((loaded / total) * 10000) / 100;
 }
+
+/**
+ * thumbnail 缩放
+ * foramt 转换格式
+ * interlace 开启jpg渐进模式，需要图片为 jpg格式
+ * quality 图片质量  0 - 100
+ * gravity/center 居中裁剪
+ * crop 输出图片尺寸
+ */
+/** cos 转换 */
+export function imgMore2(size: number, position = 'center', format = 'webp') {
+    const [w, h] = Array.isArray(size) ? size : [size, size];
+
+    const thumbnail = `thumbnail/!${w}x${h}r`;
+    const output = `crop/${w}x${h}`;
+    const gravity = `gravity/${position}`;
+    return `imageMogr2/${thumbnail}/${format}quality/100/${gravity}/${output}`;
+}

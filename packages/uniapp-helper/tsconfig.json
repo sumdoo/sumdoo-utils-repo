@@ -2,7 +2,7 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "baseUrl": ".",
-        "types": ["@dcloudio/types"]
+        "types": ["@dcloudio/types"],
     },
     "include": [
         "src/**/*.ts",

@@ -78,10 +78,10 @@ export function authorize(scope_name: string): Promise<{ ok: boolean; err: strin
     return new Promise(resolve => {
         uni.authorize({
             scope: scope_name,
-            success(res) {
+            success() {
                 resolve({ ok: true, err: '' });
             },
-            fail(err) {
+            fail(err: any) {
                 resolve({ ok: false, err });
             },
         });
@@ -92,10 +92,10 @@ export function authorize(scope_name: string): Promise<{ ok: boolean; err: strin
 export function getSetting(): Promise<{ ok: boolean; data: any; err: string }> {
     return new Promise(resolve => {
         uni.getSetting({
-            success(res) {
+            success(res: any) {
                 resolve({ ok: true, data: res, err: '' });
             },
-            fail(err) {
+            fail(err: any) {
                 resolve({ ok: false, data: null, err });
             },
         });
@@ -110,13 +110,13 @@ export function openSetting(): Promise<{ ok: boolean; data?: any; err?: string }
             content: '如需正常使用小程序功能，请点击授权',
             showCancel: false,
             confirmText: '前往授权',
-            success(res) {
+            success(res: any) {
                 if (res.confirm) {
                     uni.openSetting({
-                        success(res) {
+                        success(res: any) {
                             resolve({ ok: true, data: res });
                         },
-                        fail(err) {
+                        fail(err: any) {
                             resolve({ ok: false, err });
                         },
                     });

@@ -5,7 +5,7 @@ export const chooseImage = () => {
             count: 1,
             sizeType: ['original'],
             sourceType: ['album', 'camera'],
-            success(res) {
+            success(res: any) {
                 resolve({
                     ok  : true,
                     data: res.tempFilePaths[0],

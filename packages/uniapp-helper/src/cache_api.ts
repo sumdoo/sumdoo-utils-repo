@@ -109,8 +109,8 @@ function releaseInvalidCache(time: number) {
         // 缓存利用率超过百分之70开始释放空间
         let { keys, currentSize, limitSize } = uni.getStorageInfoSync();
         if (currentSize / limitSize > 0.7) {
-            keys = keys.filter(k => k.startsWith(NameSpace));
-            keys.forEach(k => {
+            keys = keys.filter((k: any) => k.startsWith(NameSpace));
+            keys.forEach((k: any) => {
                 let cache: CacheApi = uni.getStorageSync(k);
                 if (!isObject(cache) || Math.abs(time - cache.time) >= SevenDayTime) {
                     uni.removeStorageSync(k);

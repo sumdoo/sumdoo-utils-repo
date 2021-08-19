@@ -7,7 +7,7 @@ import { activePackages }   from '../meta/packages'
 
 const configs: RollupOptions[] = [];
 
-for (const { name, external } of activePackages) {
+for (const { name, external, globals } of activePackages) {
 
     // 取得入口文件
     const input  = `packages/${name}/src/index.ts`;
@@ -15,10 +15,12 @@ for (const { name, external } of activePackages) {
         {
             file   : `packages/${name}/dist/index.cjs.js`,
             format : 'cjs',
+            globals,
         },
         {
             file   : `packages/${name}/dist/index.esm.js`,
             format : 'es',
+            globals,
         }
     ];
 
@@ -35,7 +37,8 @@ for (const { name, external } of activePackages) {
         ],
         external: [
             ...(external || [])
-        ]
+        ],
+        
     })
 
     // 生成 dts

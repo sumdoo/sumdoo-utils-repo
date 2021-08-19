@@ -9,6 +9,10 @@ export const packages: PackageManifest[] = [
         name: 'core',
         description: '工具函数核心库'
     },
+    {
+        name        : 'uniapp-helper',
+        description : '小程序工具函数集合',
+    }
     // {
     //     name: 'web',
     //     description: 'Web-工具函数整合'

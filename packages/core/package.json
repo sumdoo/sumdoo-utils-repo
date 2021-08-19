@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/core",
-    "version": "0.4.7",
+    "version": "0.4.8",
     "description": "工具函数核心库",
     "keywords": [
         "utils"

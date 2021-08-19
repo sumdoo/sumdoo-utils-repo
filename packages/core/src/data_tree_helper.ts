@@ -17,7 +17,7 @@ interface Fn<T = any, R = T> {
 // 获取 tree 格式配置
 const getConfig = (config: Partial<TreeHelperConfig>) => Object.assign({}, DEFAULT_CONFIG, config);
 
-export function findPathAll(tree: any, func: Fn, config: Partial<TreeHelperConfig> = {}) {
+export function treeFindPathAll(tree: any, func: Fn, config: Partial<TreeHelperConfig> = {}) {
     config = getConfig(config);
 
     const path: any[] = [];
@@ -43,7 +43,7 @@ export function findPathAll(tree: any, func: Fn, config: Partial<TreeHelperConfi
     return result;
 }
 
-export function findPath<T = any>(
+export function treeFindPath<T = any>(
     tree: any,
     func: Fn,
     config: Partial<TreeHelperConfig> = {}
@@ -74,7 +74,7 @@ export function findPath<T = any>(
 }
 
 // 树结构过滤
-export function filter<T = any>(
+export function treefilter<T = any>(
     tree: T[],
     func: (n: T) => boolean,
     config: Partial<TreeHelperConfig> = {}

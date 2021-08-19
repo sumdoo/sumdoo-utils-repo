@@ -1,5 +1,6 @@
-
-export * as dt from './dt'
+export * as dt     from './dt'
+export * as is     from './is'
+export * as format from './format'
 
 export * from './data_handle'
 export * from './data_tree_helper'

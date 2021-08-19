@@ -1,7 +1,7 @@
 {
     "version": "independent",
     "npmClient": "yarn",
-    "ignoreChanges": ["ignored-file", "*.md"],
+    "ignoreChanges": ["ignored-file", "*.md", "package.json"],
     "command": {
         "publish": {
             "registry": "http://182.254.211.145:4873"

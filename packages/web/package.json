@@ -26,5 +26,6 @@
     "devDependencies": {
         "@sumdoo-utils/core": "^0.4.4",
         "crypto-js": "^4.1.1"
-    }
+    },
+    "gitHead": "e2d7245f8b14e582fed63645cb1bf95b50845b64"
 }

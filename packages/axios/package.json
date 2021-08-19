@@ -19,7 +19,7 @@
     "module": "./dist/index.esm.js",
     "homepage": "",
     "license": "MIT",
-    "gitHead": "5f7866bd9c3f0401e62fb246f802c6a00f8a45cb",
+    "gitHead": "e2d7245f8b14e582fed63645cb1bf95b50845b64",
     "peerDependencies": {
         "@sumdoo-utils/core": "^0.4.3",
         "axios": "^0.21.1"

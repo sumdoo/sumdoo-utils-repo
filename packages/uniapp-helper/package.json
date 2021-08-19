@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/uniapp-helper",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "uni-wxapp 小程序工具函数集合",
     "keywords": [
         "wxapp",
@@ -23,7 +23,7 @@
     "gitHead": "b6d615a2e55efb92c9eef8f98dc120aa91a815d9",
     "devDependencies": {
         "@dcloudio/types": "^2.5.1",
-        "@sumdoo-utils/core": "^0.4.5"
+        "@sumdoo-utils/core": "^0.4.6"
     },
     "peerDependencies": {
         "@sumdoo-utils/core": "^0.4.3"

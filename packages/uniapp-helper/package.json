@@ -20,7 +20,7 @@
     "types": "./dist/index.d.ts",
     "homepage": "",
     "license": "MIT",
-    "gitHead": "b6d615a2e55efb92c9eef8f98dc120aa91a815d9",
+    "gitHead": "72d39d4d6d6dbeb2c0ce8cb7d33272ac9a2382fa",
     "devDependencies": {
         "@dcloudio/types": "^2.5.1",
         "@sumdoo-utils/core": "^0.4.6"

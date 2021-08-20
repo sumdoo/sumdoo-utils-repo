@@ -1,28 +1,7 @@
+import type { ServiceConfig, RequestConfig, RequsetType, TaskCallBackFn, RequestTask, UploadTask } from './types';
+
 import { isFunction, isBoolean, isString } from '@sumdoo-utils/core';
-
-type RequsetType = 'GET' | 'POST' | 'UPLOAD';
-
 import statusCodeMap from './statusCodeMap';
-
-interface ServiceConfig {
-    baseURL           : string;
-    timeout          ?: number;
-    enableHttp2      ?: boolean;
-    showLoading      ?: boolean;
-    showError        ?: boolean;
-    transformRequest ?: (params: any) => any;
-    transformReponset?: (prams : any) => void;
-}
-
-export interface RequestConfig {
-    showLoading     ?: boolean ; /** 自动显示Loading */ 
-    showError       ?: boolean ; /** 自动显示错误信息 */ 
-    [key: string  ]  : any;      /** 扩展请求函数的配置 */
-}
-
-export interface TaskCallBackFn<T> {
-    (task: T): void
-}
 
 abstract class Service { 
     private   _showLoading  : boolean;
@@ -53,7 +32,7 @@ abstract class Service {
     abstract showErrorMsg(errMsg: string): void
     /** -- 以下方法继承实现 end --------------------------------------------------------------- */
 
-    get(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<UniApp.RequestTask>) {
+    get(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<RequestTask>) {
         const { showLoading, showErrorMsg } = this.getLoadingWithErrorConfig(config);
         Reflect.deleteProperty(config || {}, 'showLoading');
         Reflect.deleteProperty(config || {}, 'showError');
@@ -68,7 +47,7 @@ abstract class Service {
         }, { showLoading, showErrorMsg }, taskCallback);
     }
 
-    post(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<UniApp.RequestTask>) {
+    post(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<RequestTask>) {
 
         const { showLoading, showErrorMsg } = this.getLoadingWithErrorConfig(config);
         Reflect.deleteProperty(config || {}, 'showLoading');
@@ -84,7 +63,7 @@ abstract class Service {
         }, { showLoading, showErrorMsg }, taskCallback);
     }
 
-    upload(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<UniApp.UploadTask>) {
+    upload(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<UploadTask>) {
         const { filePath, fileName } = params;
         if (!filePath) return Promise.reject({ ok: false, err: '上传文件路径不能为空' });
 
@@ -128,7 +107,7 @@ abstract class Service {
         url          : string,
         requestConfig: Record<string, any> = {},
         config       : { showLoading: boolean, showErrorMsg: boolean },
-        taskCallback?: TaskCallBackFn<UniApp.RequestTask> | TaskCallBackFn<UniApp.UploadTask>
+        taskCallback?: TaskCallBackFn<RequestTask> | TaskCallBackFn<UploadTask>
     ): Promise<any> {
         return new Promise((resolve) => {
             config.showLoading && this.showLoading();

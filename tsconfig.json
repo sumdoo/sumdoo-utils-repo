@@ -9,15 +9,15 @@
         "strictNullChecks": true,
         "strictFunctionTypes": true,
         "resolveJsonModule": true,
-        "rootDir": ".",
+        "rootDir": "../../../",
         "baseUrl": ".",
         "jsx": "preserve",
         "skipLibCheck": true,
         "noUnusedLocals": true,
         "paths": {
-            "@sumdoo-utils/axios": ["packages/axios/src/index.ts"],
-            "@sumdoo-utils/core" : ["packages/core/src/index.ts"],
-            "@sumdoo-utils/web"  : ["packages/web/src/index.ts"],
+            "@sumdoo-utils/axios": ["./packages/axios/src/index.ts"],
+            "@sumdoo-utils/core" : ["./packages/core/src/index.ts"],
+            "@sumdoo-utils/web"  : ["./packages/web/src/index.ts"],
         }
     },
     "include": [

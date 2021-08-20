@@ -1,6 +1,6 @@
 {
     "name": "@sumdoo-utils/axios",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "工具函数请求库",
     "keywords": [
         "axios",
@@ -25,7 +25,7 @@
         "axios": "^0.21.1"
     },
     "devDependencies": {
-        "@sumdoo-utils/core": "^0.4.9",
+        "@sumdoo-utils/core": "^0.4.10",
         "axios": "^0.21.1"
     }
 }

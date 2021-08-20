@@ -1,5 +1,5 @@
 const TIMERS: Record<string, ReturnType<typeof setTimeout>> = {};
-export function sleep(time: number, key: string) {
+export function sleep(time: number, key?: string) {
     // 清除相同key的timer
     if (key) {
         const timer = TIMERS[key];

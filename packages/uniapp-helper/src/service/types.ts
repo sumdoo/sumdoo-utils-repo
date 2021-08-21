@@ -1,14 +1,28 @@
 
 export type RequsetType = 'GET' | 'POST' | 'UPLOAD';
 
+export interface ReponsetRes {
+    cookies: any[];
+    data: {
+        ok: boolean,
+        err?: string;
+        data: any,
+        server_date: string;
+        server_time: number;
+    },
+    errMsg: string;
+    header: Record<string, any>;
+    statusCode: number;
+}
+
 export interface ServiceConfig {
-    baseURL           : string;
-    timeout          ?: number;
-    enableHttp2      ?: boolean;
-    showLoading      ?: boolean;
-    showError        ?: boolean;
-    transformRequest ?: (params: any) => any;
-    transformReponset?: (prams : any) => void;
+    baseURL            : string;
+    timeout           ?: number;
+    enableHttp2       ?: boolean;
+    showLoading       ?: boolean;
+    showError         ?: boolean;
+    transformRequest  ?: (params: Record<string, any>, header: Record<string, any>) => void;
+    transformReponset ?: (res: ReponsetRes) => ReponsetRes;
 }
 
 export interface RequestConfig {

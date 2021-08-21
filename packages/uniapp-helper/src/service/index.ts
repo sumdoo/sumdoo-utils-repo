@@ -1,18 +1,19 @@
-import type { ServiceConfig, RequestConfig, RequsetType, TaskCallBackFn, RequestTask, UploadTask } from './types';
+import type { ServiceConfig, RequestConfig, RequsetType, TaskCallBackFn, RequestTask, UploadTask, ReponsetRes } from './types';
+export { ServiceConfig, RequestConfig, RequsetType }
 
 import { isFunction, isBoolean, isString } from '@sumdoo-utils/core';
 import statusCodeMap from './statusCodeMap';
 
 abstract class Service { 
-    private   _showLoading  : boolean;
-    private   _showError    : boolean;
-    protected statusCodeMap : Map<number | string, Function>;
+    protected   _showLoading : boolean;
+    protected   _showError   : boolean;
+    protected statusCodeMap  : Map<number | string, Function>;
 
-    baseURL                 : string;
-    timeout                 : number;
-    enableHttp2             : boolean;
-    transformRequest       ?: Function;
-    transformReponset      ?: Function;
+    protected baseURL                 : string;
+    protected timeout                 : number;
+    protected enableHttp2             : boolean;
+    protected transformRequest       ?: (params: Record<string, any>, header: Record<string, any>) => void;
+    protected transformReponset      ?: (res: ReponsetRes) => ReponsetRes;
 
     constructor(config: ServiceConfig) {
         this.statusCodeMap     = statusCodeMap;
@@ -27,9 +28,9 @@ abstract class Service {
     }
 
     /** -- 以下方法继承实现 start --------------------------------------------------------------- */
-    abstract showLoading(): void 
-    abstract hideLoading(): void
-    abstract showErrorMsg(errMsg: string): void
+    protected abstract showLoading(): void 
+    protected abstract hideLoading(): void
+    protected abstract showErrorMsg(errMsg: string): void
     /** -- 以下方法继承实现 end --------------------------------------------------------------- */
 
     get(url: string, params: Record<string, any> = {}, config?: RequestConfig, taskCallback?: TaskCallBackFn<RequestTask>) {
@@ -38,12 +39,14 @@ abstract class Service {
         Reflect.deleteProperty(config || {}, 'showError');
         
         const header = { ...(config?.header || {}) };
+        isFunction(this.transformRequest) && this.transformRequest(params, header);
+
         return this.createRequest('GET', url, {
             ...config   ,
             enableHttp2 : (config || {}).enableHttp2 ?? this.enableHttp2,
             timeout     : (config || {}).timeout     ?? this.timeout,
             method      : 'GET',
-            data        : isFunction(this.transformReponset) ? this.transformReponset(params, header) : params,
+            data        : params,
         }, { showLoading, showErrorMsg }, taskCallback);
     }
 
@@ -54,12 +57,14 @@ abstract class Service {
         Reflect.deleteProperty(config || {}, 'showError');
 
         const header = { ...(config?.header || {}) };
+        isFunction(this.transformRequest) && this.transformRequest(params, header);
+
         return this.createRequest('POST', url, {
             ...config   ,
             enableHttp2 : (config || {}).enableHttp2 ?? this.enableHttp2,
             timeout     : (config || {}).timeout     ?? this.timeout,
             method      : 'POST',
-            data        : isFunction(this.transformReponset) ? this.transformReponset(params, header) : params,
+            data        :  params,
         }, { showLoading, showErrorMsg }, taskCallback);
     }
 
@@ -75,6 +80,8 @@ abstract class Service {
         Reflect.deleteProperty(config || {}, 'showError');
 
         const header = { ...(config?.header || {}) };
+        isFunction(this.transformRequest) && this.transformRequest(params, header);
+
         return this.createRequest('UPLOAD', url, {
             formData: {
                 filePath,
@@ -82,18 +89,18 @@ abstract class Service {
                 ...config,
                 header   ,
                 timeout  : (config || {}).timeout     ?? this.timeout,
-                formData : isFunction(this.transformReponset) ? this.transformReponset(params, header) : params,
+                formData : params,
             }
         }, { showLoading, showErrorMsg }, taskCallback);
     }
 
     /** 解析请求路径 */
-    private parseUrl(url: string) {
+    protected parseUrl(url: string) {
         return /^https?:\/\//.test(url) ? url : `${this.baseURL}${url}`;
     }
 
     // 获取用户配置
-    private getLoadingWithErrorConfig(config?: RequestConfig) {
+    protected getLoadingWithErrorConfig(config?: RequestConfig) {
         const { showLoading, showError } = config || {};
         return {
             showLoading  : isBoolean(showLoading ) ? showLoading : this._showLoading,
@@ -102,7 +109,7 @@ abstract class Service {
     }
 
     // 创建请求
-    private createRequest(
+    protected createRequest(
         type         : RequsetType,
         url          : string,
         requestConfig: Record<string, any> = {},
@@ -116,7 +123,8 @@ abstract class Service {
                 url: this.parseUrl(url),
                 ...requestConfig,
                 success: (res: any) => {
-                    const resData = isFunction(this.transformReponset) ? this.transformReponset(res) : res.data;
+                    const _res    = isFunction(this.transformReponset) ? this.transformReponset(res) : res;
+                    const resData = _res.data; 
 
                     config.showLoading && this.hideLoading();
 

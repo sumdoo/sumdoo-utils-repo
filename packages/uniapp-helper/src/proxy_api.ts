@@ -1,7 +1,7 @@
 
 import { AUTH_API_SCOPE, checkAuthApi } from './auth_api';
 
-export function proxyUni () {
+export function setupProxyUni () {
     uni.$ = new Proxy<any>(
         {},
         {

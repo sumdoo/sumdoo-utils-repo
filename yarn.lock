@@ -5712,6 +5712,11 @@ uuid@^3.3.2:
   resolved "https://registry.npmjs.org/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+uview-ui@^1.8.4:
+  version "1.8.4"
+  resolved "http://182.254.211.145:4873/uview-ui/-/uview-ui-1.8.4.tgz#e32bbf2379421d319022e324e1cb7b5387d3bd44"
+  integrity sha512-Zr+D5dFdNy6CdHQLBEXeGq/w0LkjxzBtsgaaDwLl0P58g67H7fBBDvy6AzWK/k0c7dwPYMBiK7I4Tr9p92+0DA==
+
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "http://182.254.211.145:4873/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"

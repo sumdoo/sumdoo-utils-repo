@@ -1,0 +1,295 @@
+@import './color_var.scss';
+
+// 细边框线
+.sd-hairline {
+    &--top {
+        border-top: 1rpx solid $border-color-light;
+    }
+
+    &--bottom {
+        border-bottom: 1rpx solid $border-color-light;
+    }
+
+    &--left {
+        border-left: 1rpx solid $border-color-light;
+    }
+
+    &--right {
+        border-right: 1rpx solid $border-color-light;
+    }
+
+    &--surround {
+        border: 1rpx solid $border-color-light;
+    }
+}
+
+// 盒子
+.sd-flex {
+    display: flex;
+}
+.sd-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.sd-flex-wrap {
+    flex-wrap: wrap;
+}
+.sd-flex-nowrap {
+    flex-wrap: nowrap;
+}
+.sd-flex-1 {
+    flex: 1;
+}
+.sd-flex-2 {
+    flex: 2;
+}
+.sd-flex-3 {
+    flex: 3;
+}
+.sd-flex-y-top {
+    align-items: flex-start;
+}
+.sd-flex-y-center {
+    align-items: center;
+}
+.sd-flex-y-bottom {
+    align-items: flex-end;
+}
+.sd-flex-x-left {
+    justify-content: flex-start;
+}
+.sd-flex-x-center {
+    justify-content: center;
+}
+.sd-flex-x-right {
+    justify-content: flex-end;
+}
+.sd-flex-x-between {
+    justify-content: space-between;
+}
+.sd-flex-x-around {
+    justify-content: space-around;
+}
+
+// 盒子模型
+.sd-border-box {
+    box-sizing: border-box;
+}
+
+// 字体粗细
+.sd-fw-400 {
+    font-weight: 400;
+}
+.sd-fw-500 {
+    font-weight: 500;
+}
+.sd-fw-bold {
+    font-weight: bold;
+}
+.sd-fw-lighter {
+    font-weight: lighter;
+}
+.sd-fw-normal {
+    font-weight: normal;
+}
+
+// 文本修饰
+.sd-t-underline {
+    text-decoration: underline;
+}
+.sd-t-overline {
+    text-decoration: overline;
+}
+.sd-t-through {
+    text-decoration: line-through;
+}
+
+// 元素定位
+.sd-absolute {
+    position: absolute;
+}
+.sd-relative {
+    position: relative;
+}
+.sd-static {
+    position: static;
+}
+.sd-sticky {
+    position: sticky;
+}
+.sd-fixed {
+    position: fixed;
+}
+
+// 溢出
+.sd-over-hide {
+    overflow: hidden;
+}
+.sd-over-hide-x {
+    overflow-x: hidden;
+}
+.sd-over-hide-y {
+    overflow-y: hidden;
+}
+
+.sd-over-scroll {
+    overflow: scroll;
+}
+.sd-over-scroll-x {
+    overflow-x: scroll;
+}
+.sd-over-scroll-y {
+    overflow-y: scroll;
+}
+
+.sd-over-auto {
+    overflow: auto;
+}
+.sd-over-auto-x {
+    overflow-x: auto;
+}
+.sd-over-auto-y {
+    overflow-y: auto;
+}
+
+.sd-over-visible {
+    overflow: visible;
+}
+.sd-over-visible-x {
+    overflow-x: visible;
+}
+.sd-over-visible-y {
+    overflow-y: visible;
+}
+
+// 文字对齐
+.sd-tl {
+    text-align: left;
+}
+.sd-tc {
+    text-align: center;
+}
+.sd-tr {
+    text-align: right;
+}
+
+// 显示
+.sd-dn {
+    display: none;
+}
+.sd-di {
+    display: inline;
+}
+.sd-db {
+    display: block;
+}
+.sd-dib {
+    display: inline-block;
+}
+
+/*** 隐藏，显示 ****************************/
+.sd-op-hide {
+    opacity: 0;
+}
+.sd-op-disabled {
+    opacity: 0.5;
+}
+.sd-op-active {
+    opacity: 0.7;
+}
+.sd-op-show {
+    opacity: 1;
+}
+
+/*** 文本溢出省略号 ****************************/
+.sd-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sd-eliipsis-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+// 定义内外边距，历遍1-80
+@for $i from 0 through 50 {
+    // 宽
+    .sd-w-#{$i} {
+        width: $i * 2 + rpx;
+    }
+
+    // 高
+    .sd-h-#{$i} {
+        height: $i * 2 + rpx;
+    }
+    
+    // 文字大小
+    .sd-f-#{$i} {
+        font-size: $i * 2 + rpx!important;
+    }
+
+    // 圆角
+    .sd-b-radius-#{$i} {
+        border-radius: $i * 2 + rpx;
+    }
+    
+    // 行高
+    .sd-lh-#{$i} {
+        line-height: $i * 2 + rpx;
+    }
+    
+    // 外边距
+    .sd-ml-#{$i} {
+        margin-left: $i * 2 + rpx!important;
+    }
+    .sd-mr-#{$i} {
+        margin-right: $i * 2 + rpx!important;
+    }
+    .sd-mt-#{$i} {
+        margin-top: $i * 2 + rpx!important;
+    }
+    .sd-mb-#{$i} {
+        margin-bottom: $i * 2 + rpx!important;
+    }
+    .sd-mlr-#{$i} {
+        margin-left: $i * 2 + rpx!important;
+        margin-right: $i * 2 + rpx!important;
+    }
+    .sd-mtb-#{$i} {
+        margin-top: $i * 2 + rpx!important;
+        margin-bottom: $i * 2 + rpx!important;
+    }
+    .sd-m-#{$i} {
+        margin: $i * 2 + rpx!important;
+    }
+
+    // 内边距
+    .sd-pl-#{$i} {
+        padding-left: $i * 2 + rpx!important;
+    }
+    .sd-pr-#{$i} {
+        padding-right: $i * 2 + rpx!important;
+    }
+    .sd-pt-#{$i} {
+        padding-top: $i * 2 + rpx!important;
+    }
+    .sd-pb-#{$i} {
+        padding-bottom: $i * 2 + rpx!important;
+    }
+    .sd-plr-#{$i} {
+        padding-left: $i * 2 + rpx!important;
+        padding-right: $i * 2 + rpx!important;
+    }
+    .sd-ptb-#{$i} {
+        padding-top: $i * 2 + rpx!important;
+        padding-bottom: $i * 2 + rpx!important;
+    }
+    .sd-p-#{$i} {
+        padding: $i * 2 + rpx!important;
+    }
+}

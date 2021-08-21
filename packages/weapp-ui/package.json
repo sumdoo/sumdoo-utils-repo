@@ -1,0 +1,23 @@
+{
+    "name": "sd-weapp-ui",
+    "version": "0.0.0",
+    "description": "小程序 UI组件",
+    "keywords": [
+        "小程序",
+        "ui",
+        "uni-app"
+    ],
+    "author": "beck <2223969110@qq.com>",
+    "main": "./index.ts",
+    "homepage": "",
+    "license": "MIT",
+    "dependencies": {
+        "@sumdoo-utils/core": "^0.4.10"
+    },
+    "devDependencies": {
+        "uview-ui": "^1.8.4"
+    },
+    "peerDependencies": {
+        "uview-ui": "^1.8.4"
+    }
+}

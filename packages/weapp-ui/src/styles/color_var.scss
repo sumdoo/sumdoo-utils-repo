@@ -1,0 +1,48 @@
+/**
+* 常用颜色变量 
+*/
+$color-theme: #2AC79F !default;
+$color-white: #fff !default;
+$color-black: #000 !default;
+$color-green: #67c23a !default;
+$color-yellow: #e6a23c !default;
+$color-yellow-light: #fdf6ec !default;
+$color-red: #f56c6c !default;
+$color-red-light: #fef0f0 !default;
+$color-gray: #5f616d !default;
+
+/**
+*  文字颜色
+*/
+$text-color-primary: #303133 !default;
+$text-color-regular: #606266 !default;
+$text-color-secondary: #909399 !default;
+$text-color-placeholder: #c0c4cc !default;
+$text-color-disable: #c0c0c0 !default;
+
+/**
+*  背景颜色
+*/
+$bg-color: #f5f7fa !default;
+$bg-color-white: #fff !default;
+$bg-color-grey: #f8f8f8 !default;
+$bg-color-hover: #f1f1f1 !default; //点击状态颜色
+$bg-color-mask: rgba(0, 0, 0, 0.7) !default; //遮罩颜色
+$bg-color-mask-placeholder: rgba(0, 0, 0, 0.4) !default; //遮罩颜色
+
+/**
+*  边框颜色
+*/
+$border-color-base: #dcdfe6 !default;
+$border-color-light: #e4e7ed !default;
+$border-color-lighter: #ebeef5 !default;
+$border-color-extra-light: #f2f6fc !default;
+
+/**
+*  阴影颜色
+*/
+$base-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
+$thin-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* 透明度 */
+$opacity-disabled: 0.3; // 组件禁用态的透明度

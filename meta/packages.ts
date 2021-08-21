@@ -1,14 +1,14 @@
 
 import type { PackageManifest } from './types';
 export const packages: PackageManifest[] = [
-    {
-        name: 'axios',
-        description: '工具函数请求库'
-    },
-    {
-        name: 'core',
-        description: '工具函数核心库'
-    },
+    // {
+    //     name: 'axios',
+    //     description: '工具函数请求库'
+    // },
+    // {
+    //     name: 'core',
+    //     description: '工具函数核心库'
+    // },
     {
         name        : 'uniapp-helper',
         description : '小程序工具函数集合',

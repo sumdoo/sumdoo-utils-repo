@@ -1,0 +1,384 @@
+page {
+    height: 100%;
+    font-size: 12px;
+    color: $text-color-primary;
+    background-color: $bg-color;
+}
+
+// 扩展点击区域
+.extra-tap-area {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: -15%;
+        right: -10%;
+        top: -10%;
+        bottom: -10%;
+    }
+}
+
+// 右箭头按钮
+.icon-arrow-right {
+    font-size: 13px !important;
+    color: $text-color-secondary;
+}
+
+/* 修改单选框组件样式  */
+.base-radio-group .lastradio .u-radio__label {
+    margin-right: 0 !important;
+}
+
+.u-cell .u-cell_right .u-radio__label {
+    display: none !important;
+}
+
+.m-badge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $color-red;
+    color: $color-white;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* 页面布局  */
+.m-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__head {
+        height: 50px;
+    }
+
+    &__main {
+        width: 100%;
+        position: relative;
+        // height: 0;
+        flex: 1;
+        overflow: hidden;
+
+        &-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        &-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 28%;
+            min-width: 28%;
+            height: 100%;
+        }
+
+        &-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 28%;
+            background-color: $color-white;
+            overflow: hidden;
+        }
+    }
+
+    &__foot {
+        display: flex;
+        height: 50px;
+        background-color: $color-white;
+        border-top: 0.5px solid $border-color-light;
+
+        &.is-auto-height {
+            height: auto;
+            padding: 10px 0;
+        }
+
+        // 文本按钮
+        .text-btn {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            &.is-disabled {
+                color: $text-color-disable;
+            }
+        }
+
+        // 点击按钮
+        .btn {
+            flex: 1;
+        }
+
+        .btn + .btn {
+            margin-left: 15px;
+        }
+
+        .btn:first-child {
+            margin-left: 15px;
+        }
+        .btn:last-child {
+            margin-right: 15px;
+        }
+    }
+
+    /* 固定顶部布局 */
+    &.is-fixed-foot {
+        padding-bottom: 80px;
+        box-sizing: border-box;
+    }
+
+    &.is-fixed-foot &__foot {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    /* 左右两侧布局 */
+    &.is-flex-main &__main {
+        display: flex;
+    }
+
+    &.is-flex-main &__foot .text-btn:nth-child(1) {
+        flex: none;
+        width: 28%;
+    }
+}
+
+/* 简单表单布局  */
+.m-form {
+    &__content {
+        background-color: $color-white;
+    }
+
+    &__foot {
+        display: flex;
+        padding: 15px;
+
+        // 点击按钮
+        .btn {
+            flex: 1;
+        }
+
+        .btn + .btn {
+            margin-left: 15px;
+        }
+    }
+}
+
+// 表格
+.m-table {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__head {
+        display: flex;
+        height: 50px;
+        background: $color-theme;
+        color: $color-white;
+    }
+
+    &__body {
+        flex: 1;
+        height: 0;
+        overflow: hidden;
+    }
+
+    &__row {
+        display: flex;
+        height: 50px;
+        background-color: $color-white;
+
+        &.is-actived {
+            background: #f5f5f5;
+        }
+    }
+
+    &__col {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0 4px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    &.show-index &__col:nth-child(1) {
+        width: 30px;
+        padding-left: 10px;
+        flex: none;
+    }
+}
+
+// 左侧竖线标题
+.m-title-wrap {
+    padding: 10px;
+    background: $bg-color;
+    display: flex;
+    justify-content: space-between;
+
+    &__content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+        font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &::before {
+            content: '';
+            background: $color-theme;
+            width: 5px;
+            height: 75%;
+            border-radius: 3px;
+            margin-right: 9px;
+        }
+    }
+
+    &__info {
+        margin-left: 5px;
+        font-size: 12px;
+        color: $text-color-secondary;
+    }
+}
+
+// 图片容器
+.m-image-wrap {
+    position: relative;
+    overflow: hidden;
+
+    &.is-circle {
+        border-radius: 50%;
+    }
+
+    &.is-round {
+        border-radius: 5px;
+    }
+
+    image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__foot-tip {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0;
+        width: 100%;
+        background-color: $bg-color-mask-placeholder;
+        color: $color-white;
+    }
+}
+
+// 九宫格
+.m-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &-item {
+        position: relative;
+        width: 33.3333%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &.hover {
+            background-color: $bg-color-hover;
+        }
+
+        &__box {
+            padding: 10px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex: 1;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// 卡片式
+.m-card {
+    background-color: $color-white;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 15px;
+
+        &.hover {
+            background-color: $bg-color-hover;
+        }
+
+        &-title {
+            flex: 1;
+            font-size: 13px;
+            padding-right: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+            color: $text-color-secondary;
+
+            .icon-arrow-right {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &__main {
+        padding: 15px 0;
+    }
+
+    &__foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 0 15px;
+    }
+}

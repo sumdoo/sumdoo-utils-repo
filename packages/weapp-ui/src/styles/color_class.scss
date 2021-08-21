@@ -1,0 +1,115 @@
+/**
+* 常用颜色样式 - 文字
+*/
+
+.text-color-theme {
+    color: $color-theme;
+}
+.text-color-red {
+    color: $color-red;
+}
+.text-color-white {
+    color: $color-white;
+}
+.text-color-black {
+    color: $color-black;
+}
+.text-color-green {
+    color: $color-green;
+}
+.text-color-yellow {
+    color: $color-yellow;
+}
+.text-color-yellow-light {
+    color: $color-yellow-light;
+}
+.text-color-primary {
+    color: $text-color-primary;
+}
+.text-color-regular {
+    color: $text-color-regular;
+}
+.text-color-secondary {
+    color: $text-color-secondary;
+}
+.text-color-placeholder {
+    color: $text-color-placeholder;
+}
+.text-color-disable {
+    color: $text-color-disable;
+}
+
+/**
+* 常用颜色样式 - 背景
+*/
+.bg-color {
+    background-color: $bg-color;
+}
+.bg-color-theme {
+    background-color: $color-theme;
+}
+.bg-color-white {
+    background-color: $color-white;
+}
+.bg-color-black {
+    background-color: $color-black;
+}
+.bg-color-green {
+    background-color: $color-green;
+}
+.bg-color-yellow {
+    background-color: $color-yellow;
+}
+.bg-color-yellow-light {
+    background-color: $color-yellow-light;
+}
+.bg-color-red {
+    background-color: $color-red;
+}
+.bg-color-grey {
+    background-color: $bg-color-grey;
+}
+.bg-color-hover {
+    background-color: $bg-color-hover !important;
+}
+.bg-themecolor-hover {
+    background-color: rgba(250, 250, 250, 0.05) !important;
+}
+.bg-color-mask {
+    background-color: $bg-color-mask;
+}
+.bg-color-mask-placeholder {
+    background-color: $bg-color-mask-placeholder;
+}
+
+/**
+*  边框颜色
+*/
+.border-color {
+    border-color: #e4e7ed;
+}
+.border-color-theme {
+    border-color: $color-theme;
+}
+.border-color-base {
+    border-color: $border-color-base;
+}
+.border-color-light {
+    border-color: $border-color-light;
+}
+.border-color-lighter {
+    border-color: $border-color-lighter;
+}
+.border-color-extra-light {
+    border-color: $border-color-extra-light;
+}
+
+/**
+*  阴影颜色
+*/
+.box-shadow {
+    box-shadow: $base-shadow;
+}
+.box-thin-shadow {
+    box-shadow: $thin-shadow;
+}
